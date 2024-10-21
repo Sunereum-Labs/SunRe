@@ -2,9 +2,10 @@
 <h1> SunRe: BitVM2 For Resinsurance </h1>
 </center>
 
-Practical implementation of the BitVM2 protocol - adapted from Nero's Protocol at https://github.com/distributed-lab/nero
+Adaptation of the BitVM2 protocol for securing Reinsurance Capacity to help communities around the world withstand Climate Disaster 
+- credit to Nero's BitVM2 Protocol implemention originally at https://github.com/distributed-lab/nero
 
-# BitVM2 Reinsurance Smart Contract
+# SunRe's Reinsurance Smart Contract
 
 ## Overview
 
