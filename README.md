@@ -1,78 +1,120 @@
 <center>
-<h1> SunRe: BitVM2 For Resinsurance </h1>
+<h1> SunRe: BitVM2 for Reinsurance </h1>
 </center>
 
-Adaptation of the BitVM2 protocol for securing Reinsurance Capacity to help communities around the world withstand Climate Disaster 
-- credit to Nero's BitVM2 Protocol implemention originally at https://github.com/distributed-lab/nero
+Adaptation of the BitVM2 protocol for securing Reinsurance Capacity to help communities around the world withstand climate disasters.
+
+- Credit to Nero's BitVM2 Protocol implementation originally at [distributed-lab/nero](https://github.com/distributed-lab/nero)
 
 # SunRe's Reinsurance Smart Contract
 
 ## Overview
 
-This project demonstrates a novel reinsurance smart contract implementation using BitVM2 on the Bitcoin blockchain. It showcases how complex financial instruments can be created on Bitcoin by leveraging off-chain computations with on-chain verification.
+This project demonstrates a novel reinsurance smart contract implementation using BitVM2 on the Bitcoin blockchain. It showcases how complex financial instruments can be created on Bitcoin by leveraging off-chain computations with on-chain verification, all while utilizing Bitcoin's native protocol for enhanced security and traceability.
 
 ## Key Features
 
-- Bitcoin-based reinsurance contract with yield generation
-- Off-chain risk assessment and yield calculations
-- On-chain verification of off-chain computations
-- Dynamic premium and coverage calculations
-- Claim processing and contract state management
+- **Bitcoin-based reinsurance contract with yield generation**
+- **Off-chain risk assessment and yield calculations**
+- **On-chain verification of off-chain computations via BitVM2**
+- **Dynamic premium and coverage calculations**
+- **Claim processing and contract state management**
+- **Use of mutually agreed upon oracles within Bitcoin's native protocol**
 
 ## Novel Mechanisms in SunRe's Reinsurance Protocol
 
-SunRe's reinsurance protocol introduces several novel mechanisms that enhance the traditional reinsurance process by leveraging blockchain technology and off-chain computations. Here are the key mechanisms and their benefits:
+SunRe's reinsurance protocol introduces several innovative mechanisms that enhance the traditional reinsurance process by leveraging blockchain technology, off-chain computations, and Bitcoin's native functionalities. Here are the key mechanisms and their benefits:
 
-1. **Parametric Triggers**: 
-   - SunRe's protocol allows for the integration of parametric triggers, which are predefined conditions that automatically trigger certain actions, such as liquidation or payout, based on specific events or data points.
-   - These triggers can be integrated with any on-chain or off-chain oracle, providing flexibility and adaptability to various reinsurance scenarios.
-   - For example, a parametric trigger could be set to automatically liquidate a portion of the reinsurance pool if a certain weather event occurs, as reported by a trusted weather oracle.
+1. **Parametric Triggers with Mutually Agreed Oracles**:
+   - SunRe's protocol integrates parametric triggers, which are predefined conditions that automatically execute certain actions, such as payouts, based on specific events or data points.
+   - These triggers rely on **mutually agreed upon oracles**, ensuring that all parties have consensus on the data sources used for verification.
+   - By keeping the verification process within Bitcoin's native protocol, the system enhances security and traceability, as all actions are recorded on-chain and are immutable.
+   - *Example*: A parametric trigger could automatically initiate a payout if a weather event, like a hurricane reaching Category 5 status, is confirmed by a trusted weather oracle agreed upon by all parties.
 
 2. **Dynamic Yield Generation**:
    - The protocol supports dynamic yield generation through integration with multi-chain smart contracts.
    - This allows the reinsurance pool to generate yield based on the specific needs and risk profiles of the reinsurance business case.
-   - By leveraging smart contracts on different blockchains, SunRe can optimize yield generation strategies and provide more competitive premiums and coverage options.
+   - By leveraging smart contracts on different blockchains, SunRe can optimize yield generation strategies and offer competitive premiums and coverage options.
 
-3. **Off-Chain Computations with On-Chain Verification**:
-   - Complex computations, such as risk assessment, yield calculation, and claim verification, are performed off-chain to reduce on-chain computational load and costs.
-   - The results of these off-chain computations are then verified on-chain using cryptographic proofs, ensuring the integrity and trustworthiness of the process.
-   - This approach combines the efficiency of off-chain computations with the security and transparency of on-chain verification.
+3. **Off-Chain Computations with On-Chain Verification via BitVM2**:
+   - SunRe utilizes **BitVM2** to perform complex computations off-chain, such as risk assessment, yield calculations, and claim verification, reducing on-chain computational load and costs.
+   - Results of these off-chain computations are cryptographically verified on-chain using BitVM2, ensuring trustless execution within Bitcoin’s UTXO model.
+   - BitVM2 enables a truly native reinsurance protocol on Bitcoin by allowing sophisticated contract logic without requiring changes to the Bitcoin protocol or relying on external platforms.
 
 4. **Flexible Reinsurance Capacity and Premiums**:
    - The protocol allows users to set reinsurance capacity and premiums based on their specific requirements.
-   - Users can deposit BTC into the reinsurance pool and receive a proportional share of the yield generated.
-   - For example, if the total reinsurance capacity is $10M and a user deposits $1M, they would be entitled to 10% of the premiums and yield generated by the pool.
+   - Users can deposit BTC into the reinsurance pool and receive a proportional share of the premiums and yield generated.
 
-5. **Integration with Oracles**:
-   - SunRe's protocol can integrate with both on-chain and off-chain oracles to obtain real-time data for parametric triggers and other computations.
-   - This integration enhances the accuracy and reliability of the reinsurance process by providing up-to-date information from trusted sources.
-   - Oracles can be used to fetch data such as weather conditions, market prices, and other relevant metrics that impact the reinsurance contract.
+5. **Integration with Oracles within Bitcoin's Native Protocol**:
+   - SunRe integrates with both on-chain and off-chain oracles, mutually agreed upon by all parties, to obtain real-time data for parametric triggers.
+   - By keeping oracle verification within Bitcoin's native protocol using BitVM2, the system ensures enhanced security, transparency, and traceability.
 
-By incorporating these novel mechanisms, SunRe's reinsurance protocol offers a more efficient, transparent, and flexible solution for managing reinsurance contracts. The ability to integrate with oracles and multi-chain smart contracts further enhances the protocol's adaptability to various business cases and market conditions.
+## How It Works with BitVM2
 
-## How it Works with BitVM2
+This contract utilizes BitVM2’s capabilities to perform complex computations off-chain while maintaining the security and trustlessness of the Bitcoin blockchain. BitVM2 enables sophisticated smart contract functionality natively on Bitcoin, which was not possible before, without altering the Bitcoin protocol or requiring additional layers. Key aspects include:
 
-This contract utilizes BitVM2's capabilities to perform complex computations off-chain while still maintaining the security and trustlessness of the Bitcoin blockchain. Key aspects include:
+1. **Off-Chain Computation with On-Chain Security**:
+   - Complex operations like risk assessment, yield calculation, and claim verification are performed off-chain for efficiency.
+   - BitVM2 allows these off-chain computations to be securely verified on-chain, ensuring that only valid results agreed upon by all parties are accepted.
 
-1. **Off-chain Computation**: Complex operations like risk assessment, yield calculation, and claim verification are performed off-chain.
-2. **On-chain Verification**: Results of off-chain computations are verified on-chain using BitVM2's verification mechanisms.
-3. **Large Integer Arithmetic**: Utilizes U256 for precise calculations with large numbers.
-4. **State Management**: Contract state is updated based on verified off-chain computations.
+2. **On-Chain Verification Using Mutually Agreed Oracles**:
+   - Results from mutually agreed upon oracles are verified on-chain via BitVM2.
+   - By leveraging Bitcoin's native opcodes and BitVM2's capabilities, the protocol can securely validate oracle data without compromising the security or traceability of the network.
 
-## Main Components
+3. **Utilization of Bitcoin's Native Protocol for Security and Traceability**:
+   - All transactions and verifications are conducted within Bitcoin's native protocol, enhancing security and transparency.
+   - The use of the UTXO model and Bitcoin's scripting language ensures that all actions are immutable and traceable on the blockchain.
 
-1. `ReinsuranceContractWithOffChain`: The main struct representing the reinsurance contract.
-2. Off-chain data structures:
-   - `OffChainRiskAssessment`
-   - `OffChainYieldCalculation`
-   - `OffChainClaimVerification`
-3. Key operations:
-   - Pledge verification
-   - Risk assessment verification
-   - Yield calculation verification
-   - Claim verification
-   - State update
-   - Termination check
+4. **State Management and Contract Logic Enforced On-Chain**:
+   - The contract state is updated based on verified off-chain computations.
+   - BitVM2 enables the enforcement of complex contract logic within Bitcoin's existing framework, without the need for additional layers or protocols.
+
+By leveraging BitVM2, SunRe can create a truly native reinsurance protocol on Bitcoin, enabling sophisticated financial instruments and contracts that were not possible before.
+
+## Native Bitcoin Functionality Leveraged by BitVM2
+
+1. **Signature Verification Using Bitcoin's Native Opcodes**:
+   - BitVM2 uses native Bitcoin operations like `OP_CHECKSIG` and `OP_CHECKMULTISIG` to verify signatures from mutually agreed upon oracles.
+   - This ensures that parametric triggers and oracle data are validated using Bitcoin's built-in cryptographic mechanisms, maintaining high security and trustlessness.
+
+2. **Trustless Execution within Bitcoin's UTXO Model**:
+   - The protocol leverages Bitcoin’s UTXO (Unspent Transaction Output) model to enforce contract logic and manage state transitions.
+   - By operating within the UTXO model, the protocol ensures that all transactions are immutable, transparent, and traceable on the Bitcoin blockchain.
+
+3. **On-Chain Payouts and Premium Distributions**:
+   - Upon verification of a parametric trigger event (e.g., a natural disaster confirmed by an agreed oracle), BitVM2 enables the protocol to execute payouts directly on-chain in BTC.
+   - If the trigger event is not confirmed, premiums are calculated and distributed automatically, leveraging Bitcoin's scripting capabilities.
+
+By integrating BitVM2 with Bitcoin's native functionalities, SunRe ensures the highest level of decentralization, security, and trustlessness in its reinsurance contracts, providing a solution that was previously unattainable within the constraints of Bitcoin's original protocol.
+
+## Flowchart: SunRe Reinsurance Process
+
+To better illustrate the core concepts and ensure consistency, the following flowchart outlines the SunRe reinsurance process leveraging BitVM2 and Bitcoin's native functionalities:
+
+```mermaid
+flowchart TD
+    A[Start: Parametric Event Occurs] --> B{Oracle Validation via BitVM2}
+    B -- Yes --> C[Trigger Confirmed by Oracle]
+    C --> D[Execute On-Chain Payout per Policy Terms]
+    B -- No --> E[Trigger Not Confirmed]
+    E --> F[Calculate Premiums]
+    F --> G[Distribute Premiums as % of Bitcoin Deposit]
+    
+    subgraph "BitVM2 Verification Process Using Bitcoin's Native Protocol"
+        A --> H[Oracle Data Signed by Mutually Agreed Oracle]
+        H --> I[BitVM2 Verifies Oracle Signature On-Chain]
+        I --> J[Bitcoin UTXO Script Enforces Contract Logic]
+        J --> B
+    end
+    
+    subgraph "Scenario 1: Trigger Confirmed"
+        C --> D
+    end
+    
+    subgraph "Scenario 2: Trigger Not Confirmed"
+        E --> F --> G
+    end
+```
 
 ## Setup and Testing
 
