@@ -6,6 +6,8 @@ Adaptation of the BitVM2 protocol for securing Reinsurance Capacity, leveraging 
 
 - **Credit**: Based on Nero's BitVM2 Protocol implementation originally at [distributed-lab/nero](https://github.com/distributed-lab/nero)
 
+- SunRe InsurTech Pitch Deck: https://docs.google.com/presentation/d/1vTrMut_YnfjVRu51zZ7KNn_emagzIAjz/edit?usp=sharing&ouid=101954320330778423329&rtpof=true&sd=true
+
 # SunRe's Reinsurance Smart Contract
 
 ## Overview
